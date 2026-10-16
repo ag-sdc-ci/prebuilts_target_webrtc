@@ -1,0 +1,7 @@
+{
+	"provideLibs": [	
+		    "libdummy_webrtc-x86_64-v2.so",
+		    "libdummy_webrtc.so"
+	],
+	"visible": true
+}

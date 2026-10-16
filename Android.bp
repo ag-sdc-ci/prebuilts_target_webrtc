@@ -1,0 +1,92 @@
+package {
+    default_applicable_licenses: ["external_webrtc_license"],
+}
+
+license {
+    name: "external_webrtc_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+        "SPDX-license-identifier-BSD",
+        "SPDX-license-identifier-MIT",
+        "SPDX-license-identifier-Zlib",
+        "legacy_notice",
+        "legacy_unencumbered",
+    ],
+    license_text: [
+        "LICENSE",
+        "PATENTS",
+        "license_template.txt",
+    ],
+}
+
+license {
+    name: "external_webrtc_third_party_abseil-cpp_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+        "legacy_unencumbered",
+    ],
+    license_text: [
+        "LICENSE",
+    ],
+}
+
+prebuilt_apex {
+    name: "org.blisslabs.ag.webrtc",
+    apex_name: "org.blisslabs.ag.webrtc",
+    source_apex_name: "org.blisslabs.ag.webrtc",
+    arch: {
+        x86_64: {
+            src: "org.blisslabs.ag.webrtc.apex",
+        },
+    },
+    filename: "org.blisslabs.ag.webrtc.apex",
+    prefer: true,
+    installable: true,
+}
+
+cc_defaults {
+    name: "webrtc_defaults",
+    host_supported: true,
+    vendor_available: true,
+    cflags: [
+        "-Wno-deprecated-builtins",
+    ],
+}
+
+cc_prebuilt_library_static {
+    name: "webrtc_audio_processing",
+    host_supported: true,
+    vendor_available: true,
+    export_include_dirs: [
+        "dev-src/include",
+        "dev-src/include/modules/include",
+        "dev-src/include/modules/audio_processing/include",
+    ],
+    srcs: [
+        "dev-src/lib/libwebrtc_audio_processing.a",
+    ],
+}
+
+cc_prebuilt_library_static {
+    name: "libwebrtc",
+    host_supported: true,
+    vendor_available: true,
+    export_include_dirs: [
+        "dev-src/include",
+    ],
+    srcs: [
+        "dev-src/lib/libwebrtc.a",
+    ],
+}
+
+cc_library_headers {
+    name: "libwebrtc_absl_headers",
+    host_supported: true,
+    vendor_available: true,
+    export_include_dirs: [
+        "dev-src/include/third_party/abseil-cpp",
+    ],
+    visibility: ["//visibility:public"],
+}

@@ -1,0 +1,9 @@
+{
+	"provideLibs": [	
+		    "libdummy_headers_webrtc-x86_64-v2.so",
+		    "libdummy_headers_webrtc.so",
+		    "libdummy_webrtc_dev-x86_64-v2.so",
+		    "libdummy_webrtc_dev.so"
+	],
+	"visible": true
+}

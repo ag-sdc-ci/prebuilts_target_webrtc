@@ -1,0 +1,6 @@
+shadow prebuilt repo: webrtc (target)
+  upstream: external/webrtc
+  api-level: 32 (branch 32-20261016)
+  blobs: org.blisslabs.ag.webrtc.apex org.blisslabs.ag.webrtc.dev.apex org.blisslabs.ag.webrtc.doc.apex
+  dev-src: extracted dev payload + headers + root Android.bp
+  date: 2026-10-16

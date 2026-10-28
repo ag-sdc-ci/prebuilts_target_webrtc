@@ -60,12 +60,12 @@ cc_prebuilt_library_static {
     host_supported: true,
     vendor_available: true,
     export_include_dirs: [
-        "dev-src/include",
-        "dev-src/include/modules/include",
-        "dev-src/include/modules/audio_processing/include",
+        "include",
+        "include/modules/include",
+        "include/modules/audio_processing/include",
     ],
     srcs: [
-        "dev-src/lib/libwebrtc_audio_processing.a",
+        "lib64/libwebrtc_audio_processing.a",
     ],
 }
 
@@ -74,10 +74,10 @@ cc_prebuilt_library_static {
     host_supported: true,
     vendor_available: true,
     export_include_dirs: [
-        "dev-src/include",
+        "include",
     ],
     srcs: [
-        "dev-src/lib/libwebrtc.a",
+        "lib64/libwebrtc.a",
     ],
 }
 
@@ -86,7 +86,7 @@ cc_library_headers {
     host_supported: true,
     vendor_available: true,
     export_include_dirs: [
-        "dev-src/include/third_party/abseil-cpp",
+        "include/third_party/abseil-cpp",
     ],
     visibility: ["//visibility:public"],
 }
